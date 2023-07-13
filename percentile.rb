@@ -7,12 +7,10 @@ def percentile(pct = nil, datos = nil)
                 n = pct.class == Fixnum ? pct : pct.to_i # n, percentil 
                 if (1..99).include? n
                     d = datos.sort
-                    cant = d.length   # cantidad de elementos
-                    nk = cant * n * 0.01 - 1
+                    nk = d.length * n * 0.01 - 1
                     #puts nk +1
                     if nk % 1 == 0 # es entero
-                        i = nk.to_i 
-                        p = d[i]
+                        p = d[nk.to_i]
                         #puts "#{nk} \t \t #{p}"
                     else
                         i = nk.to_i 
